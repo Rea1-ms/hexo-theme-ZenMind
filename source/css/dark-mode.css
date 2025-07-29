@@ -18,6 +18,15 @@
   --blockquote-color: #adbac7;
   --header-bg: #252525;
   --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+  /* 覆盖主题原有的颜色变量 */
+  --font-color-0: #ff6b6b;
+  --font-color-1: #eee;
+  --font-color-2: #ccc;
+  --font-color-3: #888;
+  --bg-color-1: #333;
+  --line-1: #333;
+  --line-2: #444;
 }
 
 [data-theme="dark"] body {
@@ -88,6 +97,32 @@
   color: #999;
 }
 
+/* 修复标题颜色 */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .post-main-title {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .post-title {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .post-except {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .read-more {
+  color: var(--font-color-0);
+}
+
 [data-theme="dark"] .nav__logo,
 [data-theme="dark"] .nav__link,
 [data-theme="dark"] .post-title,
@@ -113,7 +148,7 @@
   border-top-color: var(--border-color);
 }
 
-/* 主题切换按钮样式 - 修改为菜单栏样式 */
+/* 主题切换按钮样式 - 简化为黑白风格 */
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
@@ -132,7 +167,7 @@
 }
 
 .slider {
-  background-color: #ccc;
+  background-color: #ddd;
   bottom: 0;
   cursor: pointer;
   left: 0;
@@ -156,19 +191,22 @@
 }
 
 input:checked + .slider {
-  background-color: #66bb6a;
+  background-color: #333;
 }
 
 input:checked + .slider:before {
   transform: translateX(22px);
 }
 
+/* 简化图标为黑白符号 */
 .slider .icon {
-  color: #fff;
   position: absolute;
   top: 5px;
   width: 14px;
   height: 14px;
+  font-size: 12px;
+  text-align: center;
+  color: #555;
 }
 
 .slider .sun {
@@ -177,6 +215,7 @@ input:checked + .slider:before {
 
 .slider .moon {
   left: 5px;
+  color: #fff;
   display: none;
 }
 
@@ -199,4 +238,25 @@ input:checked + .slider .moon {
   position: absolute;
   right: 8vw;
   top: 80px;
+}
+
+/* 修复分页样式 */
+[data-theme="dark"] .paginator * {
+  background-color: #252525;
+  border-color: #444;
+}
+
+[data-theme="dark"] .paginator a {
+  color: #eee;
+}
+
+[data-theme="dark"] .paginator .current {
+  color: var(--font-color-0);
+  border-color: var(--font-color-0);
+}
+
+/* 修复标签样式 */
+[data-theme="dark"] .tags a {
+  background-color: #333;
+  color: #eee;
 }
