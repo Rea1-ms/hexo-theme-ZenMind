@@ -1,0 +1,202 @@
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+  --link-color: #0366d6;
+  --border-color: #e1e4e8;
+  --code-bg: #f6f8fa;
+  --blockquote-color: #6a737d;
+  --header-bg: #fff;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #eee;
+  --link-color: #58a6ff;
+  --border-color: #333;
+  --code-bg: #2d333b;
+  --blockquote-color: #adbac7;
+  --header-bg: #252525;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .paper {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .paper-main {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] a {
+  color: var(--link-color);
+}
+
+[data-theme="dark"] header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* 修复顶栏文字颜色 */
+[data-theme="dark"] .logo {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .nav li a {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+[data-theme="dark"] .nav li a:hover {
+  opacity: 1;
+}
+
+/* 修复归档页面样式 */
+[data-theme="dark"] .archive li:nth-child(odd) {
+  background: #252525;
+}
+
+[data-theme="dark"] .archive li:nth-child(even) {
+  background: #1a1a1a;
+}
+
+[data-theme="dark"] .archive li span {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .archive-main {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .archive-title {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .archive-title:hover {
+  color: var(--font-color-0);
+}
+
+/* 文章元数据颜色修复 */
+[data-theme="dark"] .post-date {
+  color: #999;
+}
+
+[data-theme="dark"] .nav__logo,
+[data-theme="dark"] .nav__link,
+[data-theme="dark"] .post-title,
+[data-theme="dark"] .post-meta,
+[data-theme="dark"] .article-entry,
+[data-theme="dark"] .archive-list,
+[data-theme="dark"] .category-list,
+[data-theme="dark"] .tag-list {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] blockquote {
+  color: var(--blockquote-color);
+  border-left-color: var(--border-color);
+}
+
+[data-theme="dark"] code {
+  background-color: var(--code-bg);
+}
+
+[data-theme="dark"] footer {
+  color: var(--text-color);
+  border-top-color: var(--border-color);
+}
+
+/* 主题切换按钮样式 - 修改为菜单栏样式 */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  width: 46px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  background-color: white;
+  bottom: 3px;
+  content: "";
+  height: 18px;
+  left: 3px;
+  position: absolute;
+  transition: .4s;
+  width: 18px;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+.slider .icon {
+  color: #fff;
+  position: absolute;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+}
+
+.slider .sun {
+  right: 5px;
+}
+
+.slider .moon {
+  left: 5px;
+  display: none;
+}
+
+input:checked + .slider .sun {
+  display: none;
+}
+
+input:checked + .slider .moon {
+  display: block;
+}
+
+/* 在导航菜单中的主题切换样式 */
+.nav .theme-switch-wrapper {
+  margin: 0;
+  padding: 2px 0;
+}
+
+/* 文章页面的主题切换位置 */
+.post-mode {
+  position: absolute;
+  right: 8vw;
+  top: 80px;
+}

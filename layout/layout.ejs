@@ -9,9 +9,15 @@
                 <% } else { %>
                     <%- partial('_partial/header') %>
                 <% } %>
+
+                <!-- 暗黑模式切换按钮已移至导航菜单 -->
+
                 <%- body %>
                 <%- partial('_partial/footer') %>
             </div>
         </div>
+
+        <!-- 添加暗黑模式JS -->
+        <script src="/js/dark-mode.js"></script>
     </body>
 </html>
